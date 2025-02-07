@@ -128,7 +128,7 @@ https://www.tooplate.com/view/2125-artxibition
 
     <!-- Sezione del form (più in basso nella pagina) -->
     <div id="sponsor-form-section" style="margin-top: 50px;">
-        <form action="submit-sponsor.php" method="POST" class="sponsor-form">
+        <form id="sponsorForm" class="sponsor-form">
             <h2>Compila il Modulo</h2>
             <input type="text" name="nome" placeholder="Nome" required>
             <input type="text" name="cognome" placeholder="Cognome" required>
@@ -136,6 +136,25 @@ https://www.tooplate.com/view/2125-artxibition
             <input type="email" name="email" placeholder="Email" required>
             <button type="submit">Invia Richiesta</button>
         </form>
+        
+        <script>
+        document.getElementById("sponsorForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+        
+            const formData = new FormData(this);
+            const jsonData = Object.fromEntries(formData.entries());
+        
+            const response = await fetch("/sponsor", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(jsonData)
+            });
+        
+            const result = await response.json();
+            alert(result.message);
+        });
+        </script>
+        
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
