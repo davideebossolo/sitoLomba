@@ -2712,3 +2712,61 @@ responsive
 .sponsor-button:hover {
   background-color: #cc0000;
 }
+/* Rendi il form adattabile su schermi più piccoli */
+@media screen and (max-width: 768px) {
+  .sponsor-form {
+    width: 80%; /* Il form occupa l'80% dello schermo */
+    max-width: none; /* Rimuove il limite di larghezza */
+  }
+
+  .sponsor-form h2 {
+    font-size: 20px;
+  }
+
+  .sponsor-form input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .sponsor-form button {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* Stile per gli input */
+.sponsor-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+}
+
+/* Placeholder bianco */
+.sponsor-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Stile per il pulsante */
+.sponsor-form button {
+  width: 100%;
+  padding: 10px;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+/* Effetto hover sul pulsante */
+.sponsor-form button:hover {
+  background: gray;
+  color: white;
+}
